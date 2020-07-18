@@ -64,9 +64,10 @@ public class Main {
         users.put(user3.getUserID(), user3);
         users.put(user4.getUserID(), user4);
 
+        System.out.println("**************************************\nWELCOME TO VIENNA BIKE RENTAL SERVICE\n**************************************");
+
         boolean continueLoop = true;
         String rules = "Command console\n---------------\nTo exit press: 0\nTo add new user press: 1\nTo add new Bike to station press: 2\nTo rent a Bike press: 3\nTo return a bike press: 4\nTo see all users press: 5\nTo see all available bikes press: 6\nTo print all bikes press: 7";
-        System.out.println(rules);
         while(continueLoop){
             System.out.println(rules);
             Scanner in = new Scanner(System.in);
@@ -183,7 +184,7 @@ public class Main {
                         Station station = stations.get(i);
                         ArrayList<Bike> bikesInStation = station.getBikesInStation();
                         for (Bike bike : bikesInStation) {
-                            if (bike.getState() == "CanBeRented") {
+                            if (bike.getState().equals("CanBeRented")) {
                                 System.out.println(bike);
                             }
                         }
